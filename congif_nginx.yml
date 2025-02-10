@@ -1,0 +1,59 @@
+---
+- name: Process Gitea Push Event
+  hosts: all
+  gather_facts: false
+  vars:
+    full_message: "{{ test_message }}"
+    split_message: "{{ full_message.split('\n') }}"
+    extracted_message: "{{ split_message[2] }}"
+  tasks:
+    - name: Install Nginx
+      yum:
+        name: nginx
+        state: present
+
+    - name: Start and Enable Nginx Service
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Create Custom HTML Page
+      copy:
+        dest: /usr/share/nginx/html/index.html
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Fancy Nginx Page</title>
+              <style>
+                  body {
+                      background-color: #f0f8ff;
+                      font-family: Arial, sans-serif;
+                      text-align: center;
+                      margin-top: 50px;
+                  }
+                  h1 {
+                      color: #4682b4;
+                      font-size: 48px;
+                      text-shadow: 2px 2px #87ceeb;
+                  }
+                  p {
+                      color: #696969;
+                      font-size: 24px;
+                  }
+              </style>
+          </head>
+          <body>
+              <h1>{{ extracted_message }}</h1>
+              <p>This page is brought to you by Ansible automation.</p>
+          </body>
+          </html>
+      notify: Restart Nginx
+
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
+

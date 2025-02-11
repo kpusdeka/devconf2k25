@@ -11,15 +11,14 @@
     - name: Process Gitea push event
       condition: event.meta.headers.X_Gitea_Event == "push"
       action:
-        run_playbook:
-          name: test.yml
-          extra_vars:
-            gitref: "{{ event.payload.ref }}"
-            repo_name: "{{ event.payload.repository.name }}"
-            author: "{{ event.payload.head_commit.author.username }}"
-            clone_url: "{{ event.payload.repository.clone_url }}"
-            test_message: "{{ event.payload.head_commit.message }}"
+        run_job_template:
           post_events: true
+          name: nginx_config 
+          organization: Default
+          job_args:
+            extra_vars:
+              test_message: "{{ event.payload.head_commit.message }}"
+
 
           #    - name: Log all incoming events
           # condition: true

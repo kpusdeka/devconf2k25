@@ -98,9 +98,6 @@
               <div class="footer">
                   DevConf 2025 - Open Source Community Conference
               </div>
-              <script>
-                  document.getElementById('username').value = new URLSearchParams(window.location.search).get('username') || '{{ extracted_message }}';
-              </script>
           </body>
           </html>
 

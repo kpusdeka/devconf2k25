@@ -7,12 +7,18 @@
     split_message: "{{ full_message.split('\n') }}"
     extracted_message: "{{ split_message[2] }}"
   tasks:
-  
-    - name: Replace "Kunal" with "{{ xyz }}" in index.html
-      ansible.builtin.replace:
+
+    - name: Replace only the username field without affecting others
+      replace:
         path: "/opt/index.html"
-        regexp: 'value="*"'
-        replace: 'value="{{ extracted_message }}"'
+        regexp: '(?<=<label style="color: black;">Username \*</label>\s*<input type="text" value=")[^"]*(?=")'
+        replace: "{{ new_value }}"
+        
+    #- name: Replace "Kunal" with "{{ xyz }}" in index.html
+     # ansible.builtin.replace:
+      #  path: "/opt/index.html"
+       # regexp: 'value="*"'
+        #replace: 'value="{{ extracted_message }}"'
         
     - name: Print the rendered webpage using Chromium
       command: >

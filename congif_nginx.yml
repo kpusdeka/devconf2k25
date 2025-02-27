@@ -23,32 +23,99 @@
         dest: /usr/share/nginx/html/index.html
         content: |
           <!DOCTYPE html>
-          <html>
+          <html lang="en">
           <head>
-              <title>Fancy Nginx Page</title>
-              <style>
-                  body {
-                      background-color: #f0f8ff;
-                      font-family: Arial, sans-serif;
-                      text-align: center;
-                      margin-top: 50px;
-                  }
-                  h1 {
-                      color: #4682b4;
-                      font-size: 48px;
-                      text-shadow: 2px 2px #87ceeb;
-                  }
-                  p {
-                      color: #696969;
-                      font-size: 24px;
-                  }
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>AWX Login - DevConf</title>
+          <style>
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+          }
+          .header img {
+            width: 100%;
+          }
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+           }
+          .login-box {
+            display: flex;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 60%;
+           }
+          .login-form {
+             flex: 1;
+             text-align: left;
+           }
+           .awx-logo {
+            width: 150px;
+            margin-left: 20px;
+            }
+            .notes {
+            background: yellow;
+            padding: 20px;
+            width: 60%;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .notes h2 {
+            margin: 0;
+            font-size: 18px;
+             }
+            .footer {
+            background: black;
+            color: white;
+            padding: 10px;
+            margin-top: 30px;
+             }
               </style>
-          </head>
-          <body>
-              <h1>{{ extracted_message }}</h1>
-              <p>This page is brought to you by Ansible automation.</p>
-          </body>
-          </html>
+            </head>
+              <body>
+              <div class="header">
+              <img src="devconf.png" alt="DevConf Header">
+              </div>
+              <div class="container">
+              <div class="login-box">
+               <div class="login-form">
+                <h2>Welcome to AWX!</h2>
+                <p>Please log in</p>
+                <label>Username *</label>
+                <input type="text" value="{{ extracted_message }}" style="width:100%" readonly><br>
+                <label>Password *</label>
+                <input type="text" value="YourAreAwsome" style="width:100%" readonly><br>
+                <button style="width:100%;margin-top:10px;">Log In</button>
+            </div>
+            <img src="awx_logo.png" alt="AWX Logo" class="awx-logo">
+            </div>
+            <div class="notes">
+            <h2>MY NOTES</h2>
+            <p>https://github.com/ansible/awx</p>
+            <p>https://github.com/go-gitea/gitea</p>
+            </div>
+              </div>
+             <div class="footer">
+                DevConf 2025 - Open Source Community Conference
+               </div>
+              <script>
+                document.getElementById('username').value = new URLSearchParams(window.location.search).get('username') || 'Guest';
+               </script>
+               </body>
+                </html>
+
       notify: Restart Nginx
 
   handlers:

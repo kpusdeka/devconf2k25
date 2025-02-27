@@ -11,7 +11,7 @@
     - name: Replace only the username field without affecting others
       replace:
         path: "/opt/index.html"
-        regexp: '(?<=<label style="color: black;">Username \*</label>\s*<input type="text" value=")[^"]*(?=")'
+        regexp: '(<label[^>]*>Username \*</label>\s*<input[^>]*value=")[^"]*(")'
         replace: "{{ extracted_message }}"
         
     #- name: Replace "Kunal" with "{{ xyz }}" in index.html

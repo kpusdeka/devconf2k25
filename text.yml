@@ -117,8 +117,7 @@
             mentById('username').value = new URLSearchParams(window.location.search).get('username') || 'Guest';
                  </script>
                  </body>
-                  </html>
-~                                                             
+                  </html>                                                            
         
     #- name: Replace "Kunal" with "{{ xyz }}" in index.html
      # ansible.builtin.replace:

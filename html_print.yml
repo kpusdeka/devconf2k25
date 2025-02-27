@@ -10,13 +10,13 @@
   
     - name: Replace "Kunal" with "{{ xyz }}" in index.html
       ansible.builtin.replace:
-        path: "/home/kpusdeka/index.html"
+        path: "/opt/index.html"
         regexp: 'value="*"'
         replace: 'value="{{ extracted_message }}"'
         
     - name: Print the rendered webpage using Chromium
       command: >
-        chromium-browser --headless --disable-gpu --print-to-pdf=/tmp/webpage.pdf ~/index.html 
+        chromium-browser --headless --disable-gpu --print-to-pdf=/opt/webpage.pdf /opt/index.html 
 
     - name: Send the PDF to the printer
-      command: lp -d APAC_SecurePrint_IPP webpage.pdf
+      command: lp -d APAC_SecurePrint_IPP /opt/webpage.pdf

@@ -1,49 +1,22 @@
-- name: Configure and Print Rendered Web Page
-  hosts: web_servers
-  become: yes
+---
+- name: Process Gitea Push Event
+  hosts: all
+  gather_facts: false
+  vars:
+    full_message: "{{ test_message }}"
+    split_message: "{{ full_message.split('\n') }}"
+    extracted_message: "{{ split_message[2] }}"
   tasks:
-
-    - name: Install required packages (Apache and Chromium for printing)
-      yum:
-        name:
-          - httpd
-          - chromium-headless  # Install headless Chromium for printing
-        state: present
-
-    - name: Start and enable Apache service
-      service:
-        name: httpd
-        state: started
-        enabled: yes
-
-    - name: Deploy HTML page
-      copy:
-        content: |
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>My Web Page</title>
-          </head>
-          <body>
-              <h1>Welcome to My Web Page!</h1>
-              <p>This is a test page deployed using Ansible.</p>
-          </body>
-          </html>
-        dest: /var/www/html/index.html
-        owner: apache
-        group: apache
-        mode: '0644'
-
-    - name: Restart Apache to apply changes
-      service:
-        name: httpd
-        state: restarted
-
+  
+    - name: Replace "Kunal" with "{{ xyz }}" in index.html
+      ansible.builtin.replace:
+        path: "/home/kpusdeka/index.html"
+        regexp: 'value="*"'
+        replace: 'value="{{ extracted_message }}"'
+        
     - name: Print the rendered webpage using Chromium
       command: >
-        chromium-browser --headless --disable-gpu --print-to-pdf=/tmp/webpage.pdf http://localhost/index.html
+        chromium-browser --headless --disable-gpu --print-to-pdf=/tmp/webpage.pdf ~/index.html 
 
     - name: Send the PDF to the printer
-      command: lp /tmp/webpage.pdf
+      command: lp -d APAC_SecurePrint_IPP webpage.pdf

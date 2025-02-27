@@ -12,7 +12,7 @@
       replace:
         path: "/opt/index.html"
         regexp: '(?<=<label style="color: black;">Username \*</label>\s*<input type="text" value=")[^"]*(?=")'
-        replace: "{{ new_value }}"
+        replace: "{{ extracted_message }}"
         
     #- name: Replace "Kunal" with "{{ xyz }}" in index.html
      # ansible.builtin.replace:

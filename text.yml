@@ -106,4 +106,4 @@
         chromium-browser --headless --disable-gpu --print-to-pdf=/opt/webpage.pdf /opt/index.html
 
     - name: Send the PDF to the printer
-      command: lp -d APAC_SecurePrint_IPP /opt/webpage.pdf
+      command: lp -d DeskJet_5000 /opt/webpage.pdf

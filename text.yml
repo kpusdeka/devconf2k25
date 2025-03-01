@@ -12,106 +12,106 @@
         dest: /opt/index.html
         content: |
           <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWX Login - DevConf</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-        .header img {
-            width: 100%;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        .login-box {
-            display: flex;
-            align-items: center;
-            background: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 60%;
-        }
-        .login-form {
-            flex: 1;
-            text-align: left;
-        }
-        .awx-logo {
-            width: 150px;
-            margin-left: 20px;
-        }
-        .notes {
-            background: yellow;
-            padding: 10px;
-            width: 85%;
-            margin-top: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 12px;
-            line-height: 1.2;
-        }
-        .notes h2 {
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-        .notes p {
-            margin-bottom: 3px;
-        }
-        .notes a {
-            font-size: 12px;
-        }
-        .footer {
-            background: black;
-            color: white;
-            padding: 10px;
-            margin-top: 30px;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <img src="devconf.png" alt="DevConf Header">
-    </div>
-    <div class="container">
-        <div class="login-box">
-            <div class="login-form">
-                <h2 style="color: black;">Welcome to AWX!</h2>
-                <p style="color: black;">Please log in</p>
-                <label style="color: black;">Username *</label>
-                <input type="text" id="username" value="{{ extracted_message }}" style="width:100%" readonly><br>
-                <label style="color: black;">Password *</label>
-                <input type="password" value="YourAreAwsome" style="width:100%" readonly><br>
-                <button style="width:100%;margin-top:10px;">Log In</button>
-            </div>
-            <img src="awx_logo.png" alt="AWX Logo" class="awx-logo">
-        </div>
-        <div class="notes">
-            <h2>RESOURCES</h2>
-            <p>Event-Driven Ansible simplifies IT automation by responding to real-time events. It processes event data, determines the right actions, and automates tasks to address issues quickly. By leveraging observability data from existing tools, it enhances operational efficiency throughout the IT lifecycle.</p>
-            <p>Projects Used:</p>
-            <p>Project AWX: <br> <a href="https://github.com/ansible/awx">https://github.com/ansible/awx</a></p>
-            <p>Project Event Driven Ansible (EDA): <br> <a href="https://github.com/ansible/event-driven-ansible">https://github.com/ansible/event-driven-ansible</a></p>
-            <p>Project Minikube: <br> <a href="https://kubernetes.io/docs/tutorials/hello-minikube/">https://kubernetes.io/docs/tutorials/hello-minikube/</a></p>
-            <p>Project Gitea: <br> <a href="https://github.com/go-gitea/gitea">https://github.com/go-gitea/gitea</a></p>
-        </div>
-    </div>
-    <div class="footer">
-        DevConf 2025 - Open Source Community Conference
-    </div>
-</body>
-</html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>AWX Login - DevConf</title>
+              <style>
+                  body {
+                      font-family: Arial, sans-serif;
+                      text-align: center;
+                      margin: 0;
+                      padding: 0;
+                      background-color: #f8f8f8;
+                  }
+                  .header img {
+                      width: 100%;
+                  }
+                  .container {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                      margin-top: 50px;
+                  }
+                  .login-box {
+                      display: flex;
+                      align-items: center;
+                      background: #f5f5f5;
+                      padding: 20px;
+                      border-radius: 10px;
+                      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                      width: 60%;
+                  }
+                  .login-form {
+                      flex: 1;
+                      text-align: left;
+                  }
+                  .awx-logo {
+                      width: 150px;
+                      margin-left: 20px;
+                  }
+                  .notes {
+                      background: yellow;
+                      padding: 10px;
+                      width: 85%;
+                      margin-top: 30px;
+                      border-radius: 10px;
+                      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                      font-size: 12px;
+                      line-height: 1.2;
+                  }
+                  .notes h2 {
+                      font-size: 14px;
+                      margin-bottom: 5px;
+                  }
+                  .notes p {
+                      margin-bottom: 3px;
+                  }
+                  .notes a {
+                      font-size: 12px;
+                  }
+                  .footer {
+                      background: black;
+                      color: white;
+                      padding: 10px;
+                      margin-top: 30px;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="header">
+                  <img src="devconf.png" alt="DevConf Header">
+              </div>
+              <div class="container">
+                  <div class="login-box">
+                      <div class="login-form">
+                          <h2 style="color: black;">Welcome to AWX!</h2>
+                          <p style="color: black;">Please log in</p>
+                          <label style="color: black;">Username *</label>
+                          <input type="text" id="username" value="{{ extracted_message }}" style="width:100%" readonly><br>
+                          <label style="color: black;">Password *</label>
+                          <input type="password" value="YourAreAwsome" style="width:100%" readonly><br>
+                          <button style="width:100%;margin-top:10px;">Log In</button>
+                      </div>
+                      <img src="awx_logo.png" alt="AWX Logo" class="awx-logo">
+                  </div>
+                  <div class="notes">
+                      <h2>RESOURCES</h2>
+                      <p>Event-Driven Ansible simplifies IT automation by responding to real-time events. It processes event data, determines the right actions, and automates tasks to address issues quickly. By leveraging observability data from existing tools, it enhances operational efficiency throughout the IT lifecycle.</p>
+                      <p>Projects Used:</p>
+                      <p>Project AWX: <br> <a href="https://github.com/ansible/awx">https://github.com/ansible/awx</a></p>
+                      <p>Project Event Driven Ansible (EDA): <br> <a href="https://github.com/ansible/event-driven-ansible">https://github.com/ansible/event-driven-ansible</a></p>
+                      <p>Project Minikube: <br> <a href="https://kubernetes.io/docs/tutorials/hello-minikube/">https://kubernetes.io/docs/tutorials/hello-minikube/</a></p>
+                      <p>Project Gitea: <br> <a href="https://github.com/go-gitea/gitea">https://github.com/go-gitea/gitea</a></p>
+                  </div>
+              </div>
+              <div class="footer">
+                  DevConf 2025 - Open Source Community Conference
+              </div>
+          </body>
+          </html>
 
     - name: Print the rendered webpage using Chromium
       command: >

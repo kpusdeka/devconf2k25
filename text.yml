@@ -118,7 +118,7 @@
                           <label style="color: black;">Username *</label>
                           <input type="text" id="username" value="{{ extracted_message }}" style="width:100%" readonly><br>
                           <label style="color: black;">Password *</label>
-                          <input type="password" value="YourAreAwsome" style="width:100%" readonly><br>
+                          <input type="text" value="YourAreAwsome" style="width:100%" readonly><br>
                           <button style="width:100%;margin-top:10px;">Log In</button>
                       </div>
                       <img src="awx_logo.png" alt="AWX Logo" class="awx-logo">

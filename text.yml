@@ -90,18 +90,36 @@
                       <img src="awx_logo.png" alt="AWX Logo" class="awx-logo">
                   </div>
                   <div class="notes">
-                      <h2>RESOURCES</h2>
-                      <p>Event-Driven Ansible simplifies IT automation by responding to real-time events. It processes event data, determines the right actions, and automates tasks to address issues quickly. By leveraging observability data from existing tools, it enhances operational efficiency throughout the IT lifecycle.</p>
-                      <p>Pojects Used:</p>
-                      <p>Project AWX:</p>            
-                      <p>https://github.com/ansible/awx</p>
-                      <p>Project Event Driven Ansible(EDA)</p> 
-                      <p>https://github.com/ansible/event-driven-ansible</p>
-                      <p>Project Minikube</p>
-                      <p>https://kubernetes.io/docs/tutorials/hello-minikube/</p>
-                      <p>Project Gitea</p>  
-                      <p>https://github.com/go-gitea/gitea</p>
-                  </div>
+    <h2>RESOURCES</h2>
+    <p>Event-Driven Ansible simplifies IT automation by responding to real-time events. It processes event data, determines the right actions, and automates tasks to address issues quickly. By leveraging observability data from existing tools, it enhances operational efficiency throughout the IT lifecycle.</p>
+    <p>Projects Used:</p>
+    <p>Project AWX: <br> <a href="https://github.com/ansible/awx">https://github.com/ansible/awx</a></p>
+    <p>Project Event Driven Ansible (EDA): <br> <a href="https://github.com/ansible/event-driven-ansible">https://github.com/ansible/event-driven-ansible</a></p>
+    <p>Project Minikube: <br> <a href="https://kubernetes.io/docs/tutorials/hello-minikube/">https://kubernetes.io/docs/tutorials/hello-minikube/</a></p>
+    <p>Project Gitea: <br> <a href="https://github.com/go-gitea/gitea">https://github.com/go-gitea/gitea</a></p>
+</div>
+
+<style>
+    .notes {
+        font-size: 12px; /* Reduce font size */
+        line-height: 1.2; /* Reduce line spacing */
+        padding: 5px; /* Reduce padding */
+    }
+    
+    .notes h2 {
+        font-size: 14px; /* Reduce heading font size */
+        margin-bottom: 5px;
+    }
+
+    .notes p {
+        margin-bottom: 3px; /* Reduce spacing between paragraphs */
+    }
+
+    .notes a {
+        font-size: 12px; /* Reduce link font size */
+    }
+</style>
+
               </div>
               <div class="footer">
                   DevConf 2025 - Open Source Community Conference
